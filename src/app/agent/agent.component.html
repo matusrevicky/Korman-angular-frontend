@@ -1,0 +1,37 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Category</th>
+        <th scope="col">Size</th>
+        <th scope="col">For women</th>
+        <th scope="col">Min Price</th>
+        <th scope="col">Max Price</th>
+        <th scope="col">Min Difference</th>
+        <th scope="col">Model Year</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+      <tr *ngFor="let a of agents" (click)="selectAgent(a)" (dblclick)="editUserClicked(a)">
+        <th scope="row">{{a.name}}</th>
+        <td>{{a.email}}</td>
+        <td>{{a.category.name}}</td>
+        <td>{{a.size}}</td>
+        <td>{{a.wmn}}</td>
+        <td>{{a.minPrice/100}}€</td>
+        <td>{{a.maxPrice/100}}€</td>
+        <td>{{a.minDiff}}€</td>
+        <td>{{a.modelYear}}</td>
+        <td><button class="btn btn-danger" (click)="deleteUser(a)">X</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="selected">Selected: {{selected.id}} {{selected.name}}</p>
+  
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agentModal" (click)="addUserButtonClicked()">
+      Pridať používateľa
+    </button>
+
+  <app-agent-modal (savedUser)="editedUserSaved($event)" [user]="editedUser" [actionWithUser]="action"></app-agent-modal>

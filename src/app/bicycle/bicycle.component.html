@@ -1,0 +1,29 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Category</th>
+      <th scope="col">Series</th>
+      <th scope="col">Size</th>
+      <th scope="col">For women</th>
+      <th scope="col">Price</th>
+      <th scope="col">Difference</th>
+      <th scope="col">Model Year</th>
+    </tr>
+  </thead>
+  <tbody>
+   
+    <tr *ngFor="let b of bicycles" (click)="selectBicycle(b)" data-toggle="modal" data-target="#modal">
+      <th scope="row">{{b.category.name}}</th>
+      <td>{{b.series}}</td>
+      <td>{{b.size}}</td>
+      <td>{{b.wmn}}</td>
+      <td>{{b.price/100}}</td>
+      <td>{{b.diff}}</td>
+      <td>{{b.modelYear}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<app-modal [user]="selected"></app-modal>

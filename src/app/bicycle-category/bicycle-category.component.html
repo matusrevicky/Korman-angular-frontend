@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th><th scope="col">Name</th><th scope="col">External Url</th>
+      <th scope="col">External detail url</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let b of bicycleCategory" (click)="selectBicycleCategory(b)">
+      <th scope="row">{{b.id}}</th>
+      <td>{{b.name}}</td>
+      <td>{{b.externalUrl}}</td>
+      <td>{{b.externalDetailUrl}}</td>
+    </tr>
+  </tbody>
+</table>
+<p *ngIf="selected">Selected: {{selected.id}} {{selected.name}}</p>
+

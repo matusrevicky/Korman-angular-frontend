@@ -1,0 +1,30 @@
+<!-- Modal -->
+<form (ngSubmit)="onSubmit()" #myForm="ngForm">
+    <div class="modal fade" id="agentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">{{title}}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <p>Hodnota modelu: {{actualUser}}</p>
+          <div class="modal-body form-group">
+         <!--   <label>Id čipu:</label> <input class="form-control" type="text" [(ngModel)]="user.chipId" name="userChipId" required minlength="5"> -->
+            <label>Meno: </label><input class="form-control" type="text" [(ngModel)]="user.name" name="userName" required #menoModel="ngModel">
+            <label>Email: </label><input class="form-control" type="text" [(ngModel)]="user.email" name="userEmail" required #menoModel="ngModel">
+            <label>Price from: </label><input class="form-control" type="number" [(ngModel)]="user.minPrice" name="userMinPrice" required #menoModel="ngModel">
+            <label>Price to: </label><input class="form-control" type="number" [(ngModel)]="user.maxPrice" name="userMaxPrice" required #menoModel="ngModel">
+            <label>Min difference: </label><input class="form-control" type="number" [(ngModel)]="user.minDiff" name="userMinDiff" required #menoModel="ngModel">
+            <div [hidden]="menoModel.valid" class="alert alert-danger">Meno musí byť vyplnené</div>
+            <label>For woman: <input class="form-control" type="checkbox" [(ngModel)]="user.wmn" name="userWmn"></label>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!myForm.form.valid">Ulož</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
