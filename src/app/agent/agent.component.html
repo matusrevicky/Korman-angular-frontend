@@ -1,3 +1,4 @@
+<h1 class="display-3">Agents</h1>
 <table class="table">
     <thead>
       <tr>
@@ -20,18 +21,17 @@
         <td>{{a.category.name}}</td>
         <td>{{a.size}}</td>
         <td>{{a.wmn}}</td>
-        <td>{{a.minPrice/100}}€</td>
-        <td>{{a.maxPrice/100}}€</td>
+        <td>{{a.minPrice}}€</td>
+        <td>{{a.maxPrice}}€</td>
         <td>{{a.minDiff}}€</td>
         <td>{{a.modelYear}}</td>
         <td><button class="btn btn-danger" (click)="deleteUser(a)">X</button></td>
       </tr>
     </tbody>
   </table>
-  <p *ngIf="selected">Selected: {{selected.id}} {{selected.name}}</p>
   
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agentModal" (click)="addUserButtonClicked()">
-      Pridať používateľa
+      Add agent
     </button>
 
   <app-agent-modal (savedUser)="editedUserSaved($event)" [user]="editedUser" [actionWithUser]="action"></app-agent-modal>

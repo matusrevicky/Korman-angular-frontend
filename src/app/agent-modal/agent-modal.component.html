@@ -9,22 +9,54 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <p>Hodnota modelu: {{actualUser}}</p>
+         <!-- <p>Hodnota modelu: {{actualUser}}</p> -->
           <div class="modal-body form-group">
          <!--   <label>Id čipu:</label> <input class="form-control" type="text" [(ngModel)]="user.chipId" name="userChipId" required minlength="5"> -->
-            <label>Meno: </label><input class="form-control" type="text" [(ngModel)]="user.name" name="userName" required #menoModel="ngModel">
+            <label>Name: </label><input class="form-control" type="text" [(ngModel)]="user.name" name="userName" required #menoModel="ngModel">
             <label>Email: </label><input class="form-control" type="text" [(ngModel)]="user.email" name="userEmail" required #menoModel="ngModel">
             <label>Price from: </label><input class="form-control" type="number" [(ngModel)]="user.minPrice" name="userMinPrice" required #menoModel="ngModel">
             <label>Price to: </label><input class="form-control" type="number" [(ngModel)]="user.maxPrice" name="userMaxPrice" required #menoModel="ngModel">
             <label>Min difference: </label><input class="form-control" type="number" [(ngModel)]="user.minDiff" name="userMinDiff" required #menoModel="ngModel">
-            <div [hidden]="menoModel.valid" class="alert alert-danger">Meno musí byť vyplnené</div>
-            <label>For woman: <input class="form-control" type="checkbox" [(ngModel)]="user.wmn" name="userWmn"></label>
+
+            <label>Size: 
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" class="form-control" [(ngModel)]="user.size" name="userSize" >
+                <option selected></option>
+                <option value="2XS">2XS</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="2XL">2XL</option>
+              </select>
+            </label>
+
+            <label>Category: 
+                <div class="form-check form-check-inline">
+                  <div *ngFor="let ws of workshops" class="form-check">
+                    <input class="form-check-input" type="radio" name="inputws" 
+                    id="inputws{{ws.name}}" [value]="ws" [(ngModel)]="user.category">
+                    <label class="form-check-label" for="inputws{{ws.name}}">
+                     <p>{{ws.name}}  &nbsp;</p>
+                    </label>
+                  </div>  
+              </div>
+            </label>
+
+              <label>Model Year: </label><input class="form-control" type="number" [(ngModel)]="user.modelYear" name="userModelYear" required #menoModel="ngModel">
+              <label>Series (optional): </label><input class="form-control" type="text" [(ngModel)]="user.series" name="userSeries"  #menoModel="ngModel">
+
+        
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" [disabled]="!myForm.form.valid">Ulož</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!myForm.form.valid">Save</button>
           </div>
         </div>
       </div>
     </div>
     </form>
+
+    
+
+   

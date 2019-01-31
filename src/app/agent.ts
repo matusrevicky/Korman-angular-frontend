@@ -13,9 +13,8 @@ export class Agent {
     public minDiff: number;
     public modelYear: number;
     public lastCheck: Date;
-    public active: boolean;
 
-    public category: BicycleCategory;
+    category: BicycleCategory;
     constructor() {
         this.id = null;
         this.name = "";
@@ -28,8 +27,7 @@ export class Agent {
         this.minDiff = null;
         this.modelYear = null;
         this.lastCheck = new Date("1970-01-01T00:00:00.000+0000");
-        this.active = false;
-        this.category = new BicycleCategory(1,"","","");
+        this.category = null;
     }
 
     

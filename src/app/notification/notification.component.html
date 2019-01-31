@@ -1,0 +1,27 @@
+
+<h1 class="display-3">Notifications</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Agent Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Bicycle category</th>
+      <th scope="col">Bicycle size</th>
+      <th scope="col">Price</th>
+      <th scope="col">Email sent</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let n of notifications" (click)="selectNotification(n)" >
+      <th scope="row">{{n.agent.name}}</th>
+      <td>{{n.agent.email}}</td>
+      <td>{{n.bicycle.category.name}}</td>
+      <td>{{n.bicycle.size}}</td>
+      <td>{{n.bicycle.price}}</td>
+      <td>{{n.emailSent}}</td>
+      <td><button class="btn btn-danger" (click)="deleteNotification(n)">X</button></td>
+    </tr>
+  </tbody>
+</table>
+

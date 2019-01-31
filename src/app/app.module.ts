@@ -11,6 +11,8 @@ import { BicycleCategoryComponent } from './bicycle-category/bicycle-category.co
 import { ModalComponent } from './modal/modal.component';
 import { AgentComponent } from './agent/agent.component';
 import { AgentModalComponent } from './agent-modal/agent-modal.component';
+import { BicycleArchivedComponent } from './bicycle-archived/bicycle-archived.component';
+import { NotificationComponent } from './notification/notification.component';
 
 
 
@@ -21,7 +23,9 @@ import { AgentModalComponent } from './agent-modal/agent-modal.component';
     BicycleCategoryComponent,
     ModalComponent,
     AgentComponent,
-    AgentModalComponent
+    AgentModalComponent,
+    BicycleArchivedComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
