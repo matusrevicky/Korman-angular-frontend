@@ -13,6 +13,9 @@ import { AgentComponent } from './agent/agent.component';
 import { AgentModalComponent } from './agent-modal/agent-modal.component';
 import { BicycleArchivedComponent } from './bicycle-archived/bicycle-archived.component';
 import { NotificationComponent } from './notification/notification.component';
+import { LogComponent } from './log/log.component';
+import { SettingsComponent } from './settings/settings.component';
+import { SettingsModalComponent } from './settings-modal/settings-modal.component';
 
 
 
@@ -25,7 +28,10 @@ import { NotificationComponent } from './notification/notification.component';
     AgentComponent,
     AgentModalComponent,
     BicycleArchivedComponent,
-    NotificationComponent
+    NotificationComponent,
+    LogComponent,
+    SettingsComponent,
+    SettingsModalComponent
   ],
   imports: [
     BrowserModule,

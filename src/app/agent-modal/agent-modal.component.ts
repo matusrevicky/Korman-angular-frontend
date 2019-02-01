@@ -11,7 +11,7 @@ declare var $:any;
 })
 export class AgentModalComponent implements OnChanges {
 
-   private workshops:BicycleCategory[] = [new BicycleCategory(1,"","","")];
+   private workshops:BicycleCategory[] = [];
   
     @Input() private user:Agent;
     @Input() private actionWithUser:string;
@@ -37,7 +37,7 @@ export class AgentModalComponent implements OnChanges {
       this.restService.getBicycleCategory().subscribe(w => {
         
         this.workshops = w;
-        this.user.category = this.workshops[0];
+        this.user.category = this.workshops[this.user.category.id-1];
       });
     }
   

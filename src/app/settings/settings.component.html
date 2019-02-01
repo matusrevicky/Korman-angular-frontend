@@ -1,0 +1,18 @@
+<h1 class="display-3">Settings</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th><th scope="col">Content</th><th scope="col">Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let l of settings" (click)="selectSettings(l)" (dblclick)="editUserClicked(l)">
+      <th scope="row">{{l.id}}</th>
+      <td>{{l.key}}</td>
+      <td>{{l.value}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<app-settings-modal (savedUser)="editedSettingsSaved($event)" [user]="editedSettings" [actionWithUser]="action"></app-settings-modal >

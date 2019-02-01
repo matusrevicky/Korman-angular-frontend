@@ -1,0 +1,20 @@
+<h1 class="display-3">Logs</h1>
+<button type="button" class="btn btn-primary" (click)="deleteAllLogs()">
+  Clear logs
+</button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th><th scope="col">Content</th><th scope="col">Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let l of logs" (click)="selectLog(l)">
+      <th scope="row">{{l.id}}</th>
+      <td>{{l.content}}</td>
+      <td>{{l.createdAt}}</td>
+    </tr>
+  </tbody>
+</table>
+<p *ngIf="selected">Selected: {{selected.id}} {{selected.content}}</p>
